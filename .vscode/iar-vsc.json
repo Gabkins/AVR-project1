@@ -1,0 +1,18 @@
+{
+  "workspace": {
+    "path": "${workspaceFolder}\\runlt.eww"
+  },
+  "workspaces": {
+    "${workspaceFolder}\\runlt.eww": {
+      "configs": {
+        "${workspaceFolder}\\running light.ewp": "Debug"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\running light.ewp"
+      }
+    }
+  },
+  "workbench": {
+    "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 5.4"
+  }
+}
