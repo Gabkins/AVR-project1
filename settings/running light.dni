@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=-2014389056
+Checksum=-994131798
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -27,9 +27,8 @@ Graph=0
 Enabled=0
 ShowSource=1
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\protocol.c}.27.5@1" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\protocol.c}.11.1@1" 0 0 0 0 "" 0 ""
-Count=2
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\protocol.c}.11.1@1" 0 0 0 0 "" 0 ""
+Count=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

@@ -71,9 +71,8 @@ bool start_flag = 1;
   UCHAR light = 10;
   
   UINT Tcount = 0;
-  //unsigned short Frequency = 10;
 
-  /*
+ 
 void shiftOut(UCHAR data)
 {
   for(int i = 0; i < 8; i++)
@@ -86,32 +85,7 @@ void shiftOut(UCHAR data)
     CLK_PIN = 0;
     CLK_PIN = 1;
   }
-}*/
-
-
-void shiftOut(UCHAR data) {
-    for (int i = 0; i < 8; i++) {
-        // Устанавливаем значение DATA_PIN в зависимости от младшего бита
-        if (data & 0x01) {
-            DATA_PIN = 1;  // Устанавливаем 1 на DATA_PIN
-        } else {
-            DATA_PIN = 0;  // Устанавливаем 0 на DATA_PIN
-        }
-
-        // Генерируем тактовый сигнал на CLK_PIN
-        CLK_PIN = 0;
-        CLK_PIN = 1;
-
-        // Сдвигаем данные вправо для проверки следующего бита
-        data >>= 1;
-    }
 }
-
-
-
-
-
-
 
 void displayDigit(UCHAR digit, UCHAR pos) {
     UCHAR segment_data;
@@ -137,6 +111,7 @@ void displayDigit(UCHAR digit, UCHAR pos) {
         case 15: segment_data = 0XDF; break; //5
         case 16: segment_data = 0XBF; break; //6
         case 17: segment_data = 0X7F; break; //7
+        case 100: segment_data = 0XFF; break; //7
     }
     if (pos == 3){segment_data -= 1;}
     
@@ -198,6 +173,8 @@ void portSetup()
 
 void buttonAction(signed char frequencyStep)
 {
+    if (Frequency < 11 && frequencyStep < 0)
+    {frequencyStep = -1;}
     Frequency += frequencyStep;
     
     if (Frequency > 2000) {
@@ -255,7 +232,7 @@ __interrupt void ISR_TickTimer(void)
   Tcount++;
 
   switch(Position)  {
-   case 1:
+    case 1:
       d = Frequency / 1000;
       break;
     case 2:
@@ -271,10 +248,16 @@ __interrupt void ISR_TickTimer(void)
       d = light;
       break;
   }
-        
+
   displayDigit(d, Position);
+  if (Frequency < 100) {
+    Position = Position == 5 ? 3 : Position + 1;
+  } else if (Frequency < 1000) {
+    Position = Position == 5 ? 2 : Position + 1;
+  } else {
+    Position = Position == 5 ? 1 : Position + 1;
+  }
   
-  Position = Position == 5 ? 1 : Position + 1;
   
   
   if (!BUT1) {
@@ -384,6 +367,27 @@ int main()
   {
     TR = 0;
     receivePacket();
+    if (sendFlag)
+    {
+      unsigned char Spacket[5];
+      Spacket[0] = Frequency / 1000 + '0';  // ??????? ????
+   
+      Spacket[1] = Frequency / 100 % 10 + '0';
+      Spacket[2] = Frequency / 10 % 10 + '0';
+      Spacket[3] = Frequency % 10 + '0';
+      Spacket[4] = ' ';
+      int i = 0;
+      TR = 1;
+      while (i <= 5)
+      {      
+        //USART_Transmit(received_data[i]);
+        USART_Transmit(Spacket[i]);
+        i++; 
+      }
+      USART_Transmit('\0');
+      sendFlag = false;
+    }
+    
   } 
 }
 

@@ -10,7 +10,7 @@
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>124</Column0>
+          <Column0>167</Column0>
           <Column1>27</Column1>
           <Column2>27</Column2>
           <Column3>27</Column3>
@@ -62,10 +62,11 @@
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\main.cpp</Filename>
           <XPos>0</XPos>
-          <YPos>350</YPos>
-          <SelStart>6972</SelStart>
-          <SelEnd>6972</SelEnd>
+          <YPos>73</YPos>
+          <SelStart>1514</SelStart>
+          <SelEnd>1514</SelEnd>
         </Tab>
+        <ActiveTab>1</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\eeprom.h</Filename>
@@ -79,16 +80,16 @@
           <Filename>$WS_DIR$\protocol.c</Filename>
           <XPos>0</XPos>
           <YPos>0</YPos>
-          <SelStart>230</SelStart>
-          <SelEnd>230</SelEnd>
+          <SelStart>399</SelStart>
+          <SelEnd>399</SelEnd>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\usart.c</Filename>
           <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>367</SelStart>
-          <SelEnd>367</SelEnd>
+          <YPos>18</YPos>
+          <SelStart>603</SelStart>
+          <SelEnd>603</SelEnd>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -102,11 +103,10 @@
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\data.c</Filename>
           <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>898</SelStart>
-          <SelEnd>937</SelEnd>
+          <YPos>15</YPos>
+          <SelStart>749</SelStart>
+          <SelEnd>788</SelEnd>
         </Tab>
-        <ActiveTab>6</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\data.h</Filename>
@@ -120,8 +120,16 @@
           <Filename>$WS_DIR$\protocol.h</Filename>
           <XPos>0</XPos>
           <YPos>0</YPos>
-          <SelStart>68</SelStart>
-          <SelEnd>68</SelEnd>
+          <SelStart>45</SelStart>
+          <SelEnd>45</SelEnd>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\usart.h</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
         </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
@@ -153,16 +161,16 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>659</Bottom>
-                <Right>198</Right>
+                <Bottom>708</Bottom>
+                <Right>241</Right>
                 <x>-2</x>
                 <y>-2</y>
-                <xscreen>200</xscreen>
-                <yscreen>200</yscreen>
-                <sizeHorzCX>207254</sizeHorzCX>
-                <sizeHorzCY>221729</sizeHorzCY>
-                <sizeVertCX>207254</sizeVertCX>
-                <sizeVertCY>732816</sizeVertCY>
+                <xscreen>456</xscreen>
+                <yscreen>238</yscreen>
+                <sizeHorzCX>237500</sizeHorzCX>
+                <sizeHorzCY>240647</sizeHorzCY>
+                <sizeVertCX>126563</sizeVertCX>
+                <sizeVertCY>717897</sizeVertCY>
               </Rect>
             </Wnd0>
           </Sizes>
@@ -180,16 +188,16 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>198</Bottom>
-                <Right>967</Right>
+                <Bottom>236</Bottom>
+                <Right>1922</Right>
                 <x>-2</x>
                 <y>-2</y>
-                <xscreen>969</xscreen>
-                <yscreen>200</yscreen>
-                <sizeHorzCX>1004145</sizeHorzCX>
-                <sizeHorzCY>221729</sizeHorzCY>
-                <sizeVertCX>207254</sizeVertCX>
-                <sizeVertCY>221729</sizeVertCY>
+                <xscreen>1924</xscreen>
+                <yscreen>238</yscreen>
+                <sizeHorzCX>1002083</sizeHorzCX>
+                <sizeHorzCY>240647</sizeHorzCY>
+                <sizeVertCX>237500</sizeVertCX>
+                <sizeVertCY>240647</sizeVertCY>
               </Rect>
             </Wnd1>
           </Sizes>

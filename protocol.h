@@ -1,8 +1,8 @@
 #ifndef PROTOCOL_H
 #define PROTOCOL_H
-
+extern bool sendFlag;
 void receivePacket(void);
 
-//void sendPacket(unsigned char command, unsigned short data);
+
 
 #endif // PROTOCOL_H

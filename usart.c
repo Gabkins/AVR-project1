@@ -18,11 +18,12 @@ void usart_setup(UCHAR ubrr)
 
 void USART_Transmit(UCHAR data )
 {
-
+   TR = 1;
 /* Wait for empty transmit buffer */
-  while (!(UCSR0A & (1 << 5)));
+  while (!(UCSR0A & (1 << 5))); //UDRE0
 /* Put data into buffer, sends the data */
   UDR0 = data;
+
 }
 
 
