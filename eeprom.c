@@ -17,7 +17,7 @@ void EEPROM_write_int(unsigned int uiAddress, int data)
 {
     EEPROM_write(uiAddress, (unsigned char)(data & 0xFF));
     EEPROM_write(uiAddress + 1, (unsigned char)((data >> 8) & 0xFF));
-}
+} 
 
 unsigned char EEPROM_read(unsigned int uiAddress)
 {

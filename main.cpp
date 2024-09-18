@@ -370,7 +370,7 @@ int main()
     if (sendFlag)
     {
       unsigned char Spacket[5];
-      Spacket[0] = Frequency / 1000 + '0';  // ??????? ????
+      Spacket[0] = Frequency / 1000 + '0';  //  ??????? ????
    
       Spacket[1] = Frequency / 100 % 10 + '0';
       Spacket[2] = Frequency / 10 % 10 + '0';
@@ -380,7 +380,6 @@ int main()
       TR = 1;
       while (i <= 5)
       {      
-        //USART_Transmit(received_data[i]);
         USART_Transmit(Spacket[i]);
         i++; 
       }

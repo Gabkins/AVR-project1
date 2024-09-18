@@ -9,10 +9,10 @@ void usart_setup(UCHAR ubrr)
   UBRR0H = (UCHAR)(ubrr >> 8);
   UBRR0L = (UCHAR)ubrr;
   
-  UCSR0B_RXEN0 = 1; //recieve permission
+  UCSR0B_RXEN0 = 1;  //recieve permission
   UCSR0B_TXEN0 = 1; //transmit permission
   
-  UCSR0C_UCSZ00 = 1; //8 бит, 1 стоп-бит
+  UCSR0C_UCSZ00 = 1; //8 пїЅпїЅпїЅ, 1 пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅ
   UCSR0C_UCSZ01 = 1;
 }
 

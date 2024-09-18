@@ -7,7 +7,7 @@ unsigned char CRC8(unsigned char *data, unsigned char length) {
         for (unsigned char j = 0; j < 8; j++) {
             if (crc & 0x80) {
                 crc = (crc << 1) ^ 0x07;
-            } else {
+            } else { 
                 crc <<= 1;
             }
         }

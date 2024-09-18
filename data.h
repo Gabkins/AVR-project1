@@ -6,5 +6,5 @@ extern bool blinkFlag;
 
 void setFrequency(unsigned short freq);
 void writeData(unsigned short value);
-
+ 
 #endif // DATA_H
