@@ -14,14 +14,10 @@
 #define UCHAR unsigned char
 #define UINT unsigned int
 
-#define F_CPU 11059200
-#define F_CPUd1024 10800
-
 #define DELAY_MS(ms) 	__delay_cycles((F_CPU / 1000) * (ms))
 
 //USART DEFINES
-#define BAUD 9600
-#define MYUBRR F_CPU/16/BAUD-1
+
 
 #define RXD0 PORTE_PORTE0
 #define TXD0 PORTE_PORTE1
@@ -362,11 +358,11 @@ int main()
   timerSetup();
   Timer1_setup();
   usart_setup(MYUBRR);
-  
+  TR = 0;
   while(1)
   {
-    TR = 0;
     receivePacket();
+    
     if (sendFlag)
     {
       unsigned char Spacket[5];
@@ -385,6 +381,7 @@ int main()
       }
       USART_Transmit('\0');
       sendFlag = false;
+      TR = 0;
     }
     
   } 

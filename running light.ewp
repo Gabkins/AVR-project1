@@ -63,7 +63,7 @@
         </option>
         <option>
           <name>SCCStackSize</name>
-          <state>0x20</state>
+          <state>0x40</state>
         </option>
         <option>
           <name>SCExtCStack</name>
@@ -1982,12 +1982,6 @@
   </file>
   <file>
     <name>$PROJ_DIR$\main.cpp</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\protocol.c</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\protocol.h</name>
   </file>
   <file>
     <name>$PROJ_DIR$\usart.c</name>
