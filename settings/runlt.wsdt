@@ -10,7 +10,7 @@
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>124</Column0>
+          <Column0>105</Column0>
           <Column1>27</Column1>
           <Column2>27</Column2>
           <Column3>27</Column3>
@@ -23,12 +23,17 @@
         <ColumnWidth3>93</ColumnWidth3>
       </Build>
       <TerminalIO/>
+      <Disassembly>
+        <MixedMode>1</MixedMode>
+        <CodeCovShow>0</CodeCovShow>
+        <InstrProfShow>0</InstrProfShow>
+      </Disassembly>
     </Static>
     <Windows>
-      <Wnd2>
+      <Wnd1>
         <Tabs>
           <Tab>
-            <Identity>TabID-3393-11317</Identity>
+            <Identity>TabID-28623-1940</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
@@ -39,11 +44,11 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd2>
+      </Wnd1>
       <Wnd3>
         <Tabs>
           <Tab>
-            <Identity>TabID-25524-2100</Identity>
+            <Identity>TabID-6459-14636</Identity>
             <TabName>Build</TabName>
             <Factory>Build</Factory>
             <Session/>
@@ -62,38 +67,22 @@
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\main.cpp</Filename>
           <XPos>0</XPos>
-          <YPos>349</YPos>
-          <SelStart>7322</SelStart>
-          <SelEnd>7322</SelEnd>
-        </Tab>
-        <ActiveTab>1</ActiveTab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\protocol.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>161</SelStart>
-          <SelEnd>161</SelEnd>
+          <YPos>344</YPos>
+          <SelStart>6624</SelStart>
+          <SelEnd>6624</SelEnd>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\usart.c</Filename>
           <XPos>0</XPos>
-          <YPos>45</YPos>
-          <SelStart>626</SelStart>
-          <SelEnd>626</SelEnd>
+          <YPos>53</YPos>
+          <SelStart>1835</SelStart>
+          <SelEnd>1835</SelEnd>
         </Tab>
+        <ActiveTab>2</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\usart.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>104</SelStart>
-          <SelEnd>104</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\protocol.h</Filename>
           <XPos>0</XPos>
           <YPos>0</YPos>
           <SelStart>0</SelStart>
@@ -102,38 +91,6 @@
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\data.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>472</SelStart>
-          <SelEnd>472</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\data.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\eeprom.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\crc.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\Debug\Exe\running light.d90</Filename>
           <XPos>0</XPos>
           <YPos>0</YPos>
           <SelStart>0</SelStart>
@@ -153,9 +110,9 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-0265fd28>
+            <Toolbar-0260fe78>
               <key>iaridepm.enu1</key>
-            </Toolbar-0265fd28>
+            </Toolbar-0260fe78>
           </Sizes>
         </Row0>
         <Row1>
@@ -165,22 +122,22 @@
       <Left>
         <Row0>
           <Sizes>
-            <Wnd2>
+            <Wnd1>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>737</Bottom>
-                <Right>198</Right>
+                <Bottom>739</Bottom>
+                <Right>179</Right>
                 <x>-2</x>
                 <y>-2</y>
-                <xscreen>200</xscreen>
-                <yscreen>200</yscreen>
-                <sizeHorzCX>208768</sizeHorzCX>
-                <sizeHorzCY>204082</sizeHorzCY>
-                <sizeVertCX>208768</sizeVertCX>
-                <sizeVertCY>754082</sizeVertCY>
+                <xscreen>100</xscreen>
+                <yscreen>198</yscreen>
+                <sizeHorzCX>104384</sizeHorzCX>
+                <sizeHorzCY>202041</sizeHorzCY>
+                <sizeVertCX>188935</sizeVertCX>
+                <sizeVertCY>756122</sizeVertCY>
               </Rect>
-            </Wnd2>
+            </Wnd1>
           </Sizes>
         </Row0>
       </Left>
@@ -196,16 +153,16 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>198</Bottom>
+                <Bottom>196</Bottom>
                 <Right>960</Right>
                 <x>-2</x>
                 <y>-2</y>
                 <xscreen>962</xscreen>
-                <yscreen>200</yscreen>
+                <yscreen>198</yscreen>
                 <sizeHorzCX>1004175</sizeHorzCX>
-                <sizeHorzCY>204082</sizeHorzCY>
-                <sizeVertCX>208768</sizeVertCX>
-                <sizeVertCY>204082</sizeVertCY>
+                <sizeHorzCY>202041</sizeHorzCY>
+                <sizeVertCX>104384</sizeVertCX>
+                <sizeVertCY>202041</sizeVertCY>
               </Rect>
             </Wnd3>
           </Sizes>

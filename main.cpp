@@ -361,28 +361,9 @@ int main()
   TR = 0;
   while(1)
   {
-    receivePacket();
+
     
-    if (sendFlag)
-    {
-      unsigned char Spacket[5];
-      Spacket[0] = Frequency / 1000 + '0';  //  ??????? ????
-   
-      Spacket[1] = Frequency / 100 % 10 + '0';
-      Spacket[2] = Frequency / 10 % 10 + '0';
-      Spacket[3] = Frequency % 10 + '0';
-      Spacket[4] = ' ';
-      int i = 0;
-      TR = 1;
-      while (i <= 5)
-      {      
-        USART_Transmit(Spacket[i]);
-        i++; 
-      }
-      USART_Transmit('\0');
-      sendFlag = false;
-      TR = 0;
-    }
+    
     
   } 
 }
