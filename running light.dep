@@ -6,82 +6,90 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\src\template\cfg3soim.xcl</file>
-      <file>$TOOLKIT_DIR$\inc\comp_a90.h</file>
-      <file>$PROJ_DIR$\main.cpp</file>
-      <file>$PROJ_DIR$\eeprom.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\crc.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\DLib_Product.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\protocol.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\protocol.r90</file>
-      <file>$PROJ_DIR$\crc.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\usart.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\eeprom.r90</file>
-      <file>$PROJ_DIR$\Debug\Obj\protocol.pbi</file>
-      <file>$PROJ_DIR$\usart.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ysizet.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\data.pbi</file>
-      <file>$PROJ_DIR$\data.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\eeprom.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\xencoding_limits.h</file>
-      <file>$TOOLKIT_DIR$\src\template\cfgm128a.xcl</file>
-      <file>$TOOLKIT_DIR$\inc\inavr.h</file>
-      <file>$PROJ_DIR$\crc.h</file>
-      <file>$PROJ_DIR$\eeprom.c</file>
-      <file>$TOOLKIT_DIR$\inc\ina90.h</file>
-      <file>$PROJ_DIR$\data.h</file>
       <file>$PROJ_DIR$\Debug\Obj\data.r90</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dlAVR-3s-ec_mul-n.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\DLib_Defaults.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\yvals.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\stdio.h</file>
       <file>$PROJ_DIR$\Debug\Obj\main.r90</file>
       <file>$TOOLKIT_DIR$\inc\bitdefinitions\iom128a.inc</file>
-      <file>$TOOLKIT_DIR$\inc\ioavr.h</file>
-      <file>$TOOLKIT_DIR$\inc\iom128a.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\usart.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dlAVR-3s-ec_mul-n.r90</file>
-      <file>$PROJ_DIR$\Debug\Obj\running light.pbd</file>
-      <file>$PROJ_DIR$\..\rs485\main.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\usart.r90</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ycheck.h</file>
-      <file>$PROJ_DIR$\protocol.h</file>
-      <file>$PROJ_DIR$\Debug\Exe\running light.d90</file>
+      <file>$TOOLKIT_DIR$\inc\ina90.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dlAVR-3s-ec_mul-n.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\DLib_Defaults.h</file>
       <file>$PROJ_DIR$\Debug\Obj\crc.r90</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dlAVR-3s-ec_mul-n.r90</file>
+      <file>$PROJ_DIR$\..\rs485\main.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\iom128a.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\running light.pbd</file>
+      <file>$PROJ_DIR$\protocol.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\usart.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioavr.h</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ycheck.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\running light.d90</file>
+      <file>$PROJ_DIR$\Debug\Obj\usart.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\crc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\eeprom.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\comp_a90.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\DLib_Product.h</file>
+      <file>$PROJ_DIR$\eeprom.h</file>
+      <file>$PROJ_DIR$\usart.h</file>
+      <file>$PROJ_DIR$\protocol.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\eeprom.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\protocol.pbi</file>
+      <file>$PROJ_DIR$\main.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\crc.c</file>
+      <file>$PROJ_DIR$\data.c</file>
+      <file>$PROJ_DIR$\data.h</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg3soim.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\protocol.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\data.pbi</file>
+      <file>$PROJ_DIR$\eeprom.c</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgm128a.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\inavr.h</file>
+      <file>$PROJ_DIR$\crc.h</file>
+      <file>$PROJ_DIR$\usart.c</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 44</file>
+          <file> 19</file>
         </tool>
       </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\main.cpp</name>
+      <name>$PROJ_DIR$\..\rs485\main.cpp</name>
       <outputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 31</file>
+          <file> 3</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 10</file>
+          <file> 38</file>
         </tool>
       </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\running light.pbd</name>
       <inputs>
         <tool>
-          <name>ICCAVR</name>
-          <file> 33 34 36 32 40 24 21 1 30 42 29 28 27 5 19 6 15 14 22 3 25 43</file>
+          <name>BILINK</name>
+          <file> 21 40 22 38 14</file>
         </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\running light.d90</name>
+      <inputs>
         <tool>
-          <name>BICOMP</name>
-          <file> 33 34 36 32 40 24 21 1 30 42 29 28 5 19 6 15 14 22 3 25 43</file>
+          <name>XLINK</name>
+          <file> 42 36 8 0 29 3 20 9</file>
         </tool>
       </inputs>
     </file>
@@ -90,21 +98,44 @@
       <outputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 8</file>
+          <file> 37</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 13</file>
+          <file> 30</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 14 22 43 25</file>
+          <file> 27 44 13 35</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 14 22 43 25</file>
+          <file> 27 44 13 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 16 11 17 4 15 5 43 24 2 18 1 7 6 25 32 23 39 27 44 26 35 13</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16 11 17 4 15 5 43 24 2 18 1 7 25 32 23 39 27 44 26 35 13</file>
         </tool>
       </inputs>
     </file>
@@ -113,44 +144,21 @@
       <outputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 45</file>
+          <file> 8</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 4</file>
+          <file> 21</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 22</file>
+          <file> 44</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 22</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\usart.c</name>
-      <outputs>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 41</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 35</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 33 34 36 32 14 22 25</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 33 34 36 32 14 22 25</file>
+          <file> 44</file>
         </tool>
       </inputs>
     </file>
@@ -159,21 +167,21 @@
       <outputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 26</file>
+          <file> 0</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 16</file>
+          <file> 40</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 25 14 3 33 34 36 32</file>
+          <file> 35 27 26 16 11 17 4</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 25 14 3 33 34 36 32</file>
+          <file> 35 27 26 16 11 17 4</file>
         </tool>
       </inputs>
     </file>
@@ -182,52 +190,44 @@
       <outputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 12</file>
+          <file> 29</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 18</file>
+          <file> 22</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 3 33 34 36 32</file>
+          <file> 26 16 11 17 4</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 3 33 34 36 32</file>
+          <file> 26 16 11 17 4</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\Debug\Obj\running light.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 4 16 18 10 35</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\rs485\main.cpp</name>
+      <name>$PROJ_DIR$\usart.c</name>
       <outputs>
         <tool>
           <name>ICCAVR</name>
-          <file> 31</file>
+          <file> 20</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 10</file>
+          <file> 14</file>
         </tool>
       </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\running light.d90</name>
       <inputs>
         <tool>
-          <name>XLINK</name>
-          <file> 20 0 45 26 12 31 41 37</file>
+          <name>ICCAVR</name>
+          <file> 16 11 17 4 27 44 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16 11 17 4 27 44 35</file>
         </tool>
       </inputs>
     </file>

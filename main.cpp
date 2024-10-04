@@ -183,6 +183,7 @@ void buttonAction(signed char frequencyStep)
     
     }
     setFrequency(Frequency);
+    Tcount = 1;
 }
 
 
@@ -255,68 +256,19 @@ __interrupt void ISR_TickTimer(void)
   }
   
   
-  
-  if (!BUT1) {
+  if(!BUT1)
+  {
     B1_time++;
-        
-    if (B1_time >= 10000) {
-      if (!extraLongFlag) {
-        extraLongFlag = 1;
-        LongFlag = 0;        
-      }
-      if (Tcount % 100 == 0){
-      buttonAction(10);
-      }
-    } else if (B1_time >= 1000) {
-      if (!LongFlag) {
-        LongFlag = 1;
-      }
-      if (Tcount % 100 == 0){
-      buttonAction(1);
-      }
-    }
-  } else {
-    if (B1_time >= 30 && B1_time < 1000) {
-      buttonAction(1);
-    }
-    B1_time = 0;
-    LongFlag = 0;
-    extraLongFlag = 0;
-  }
+  } else {B1_time = 0;}
   
-  
-  if (!BUT2) {
+  if(!BUT2)
+  {
     B2_time++;
-        
-    if (B2_time >= 10000) {
-      if (!extraLongFlag) {
-        extraLongFlag = 1;
-        LongFlag = 0;        
-      }
-      if (Tcount % 100 == 0){
-      buttonAction(-10);
-      }
-    } else if (B2_time >= 1000) {
-      if (!LongFlag) {
-        LongFlag = 1;
-      }
-      if (Tcount % 100 == 0){
-      buttonAction(-1);
-      }
-    }
-  } else {
-    if (B2_time >= 30 && B2_time < 1000) {
-      buttonAction(-1);
-    }
-    B2_time = 0;
-    LongFlag = 0;
-    extraLongFlag = 0;
-  }
+  } else {B2_time = 0;} 
   
-  
-  if (!BUT3)  {
+  if (!BUT3)  
+  {
     B3_time++;
-   
   } else {
     if (B3_time >= 30 && B3_time < 1000){
       EEPROM_write_int(0, Frequency);
@@ -324,17 +276,18 @@ __interrupt void ISR_TickTimer(void)
     }
     B3_time = 0;
   }
-  
-    if (!BUT4)  {
+    
+  if (!BUT4)  
+  {
     B4_time++;
-   
   } else {
-    if (B4_time >= 30 && B4_time < 1000){
+    if (BUT4 && B4_time >= 30 && B4_time < 1000){
       Frequency = EEPROM_read_int(0);
       setFrequency(Frequency);
     }
     B4_time = 0;
   }
+   
   
   if (blinkFlag){
     blinkDiod();
@@ -345,6 +298,9 @@ __interrupt void ISR_TickTimer(void)
 
 int main()
 {
+  unsigned short B1_prevtime;
+  
+  
   Frequency = EEPROM_read_int(0);
 
   if (Frequency > 2000)
@@ -361,8 +317,41 @@ int main()
   TR = 0;
   while(1)
   {
-
+    if (!BUT1) {
+      if (B1_time >= 10000) {
+        if (Tcount % 100 == 0){
+        buttonAction(10);
+        }
+      } else if (B1_time >= 1000) {
+        if (Tcount % 100 == 0){
+        buttonAction(1);
+        }
+      }
+    } else {
+      if (B1_time >= 30 && B1_time < 1000) {
+        buttonAction(1);
+      }
+      B1_time = 0;
+    }
     
+    if (!BUT2) {
+      if (B2_time >= 10000) {
+        if (Tcount % 100 == 0){
+        buttonAction(-10);
+        }
+      } else if (B2_time >= 1000) {
+        if (Tcount % 100 == 0){
+        buttonAction(-1);
+        }
+      }
+    } else {
+      if (B2_time >= 30 && B1_time < 1000) {
+        buttonAction(-1);
+      }
+      B2_time = 0;
+    }
+    
+   
     
     
   } 
