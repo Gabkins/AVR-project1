@@ -3,7 +3,6 @@
 #include "eeprom.h"
 
 #define F_CPUd1024 10800
-#define TR PORTE_PORTE2
 
 extern unsigned short Frequency = 10;
 extern bool blinkFlag = false;

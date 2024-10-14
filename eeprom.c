@@ -1,9 +1,13 @@
+#include <ina90.h>
 #include "eeprom.h"
+
 
 void EEPROM_write(unsigned int uiAddress, unsigned char ucData)
 {
+    
     /* Wait for completion of previous write */
     while(EECR & (1<<1)); // EEWE == 1 
+    _CLI();
     /* Set up address and data registers */
     EEAR = uiAddress;
     EEDR = ucData;
@@ -11,12 +15,15 @@ void EEPROM_write(unsigned int uiAddress, unsigned char ucData)
     EECR |= (1<<2); // EEMWE == 2
     /* Start eeprom write by setting EEWE */
     EECR |= (1<<1); // EEWE == 1
+    _SEI();
 }
 
 void EEPROM_write_int(unsigned int uiAddress, int data)
 {
+    
     EEPROM_write(uiAddress, (unsigned char)(data & 0xFF));
     EEPROM_write(uiAddress + 1, (unsigned char)((data >> 8) & 0xFF));
+    
 } 
 
 unsigned char EEPROM_read(unsigned int uiAddress)

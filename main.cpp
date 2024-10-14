@@ -3,6 +3,7 @@
 #include <intrinsics.h>
 #include <ina90.h>
 #include <stdio.h>
+#include <ina90.h>
 
 #include "usart.h"
 #include "crc.h"
@@ -21,7 +22,7 @@
 
 #define RXD0 PORTE_PORTE0
 #define TXD0 PORTE_PORTE1
-#define TR PORTE_PORTE2
+
 #define RXC0 7
 bool timeout_flag = 0;
 UCHAR uart_cnt = 0;
@@ -51,7 +52,7 @@ bool start_flag = 1;
   
   unsigned short blinkTimer = 0;
   UCHAR blinkCount = 0;
-
+  bool frequencyChanged = false;
   unsigned short longPressRepeatTimer = 0;
   
   bool T1Flag = 0;
@@ -65,6 +66,7 @@ bool start_flag = 1;
   UCHAR Position = 1;
   UCHAR d;
   UCHAR light = 10;
+  UCHAR digits[5];
   
   UINT Tcount = 0;
 
@@ -127,6 +129,17 @@ void displayDigit(UCHAR digit, UCHAR pos) {
     }
 }
 
+void updateDigits() {
+  digits[0] = Frequency / 1000;
+    
+  digits[1] = (Frequency / 100) % 10;
+   
+  digits[2] = (Frequency / 10) % 10;
+
+  digits[3] = Frequency % 10;
+
+}
+
 void timerSetup()
 {
   TCCR0_WGM01 = 1;
@@ -183,6 +196,7 @@ void buttonAction(signed char frequencyStep)
     
     }
     setFrequency(Frequency);
+    frequencyChanged = true;
     Tcount = 1;
 }
 
@@ -218,6 +232,7 @@ __interrupt void ISR_TickTimer1(void)
   {
     light = light == 17 ? 10 : light + 1;
   }
+  digits[4] = light;
 }
 
 #pragma vector=TIMER0_COMP_vect   //INTERRUPT
@@ -228,25 +243,8 @@ __interrupt void ISR_TickTimer(void)
   
   Tcount++;
 
-  switch(Position)  {
-    case 1:
-      d = Frequency / 1000;
-      break;
-    case 2:
-      d = Frequency / 100 % 10;
-      break;
-    case 3:
-      d = Frequency / 10 % 10;
-      break;
-    case 4:
-      d = Frequency % 10;
-      break;
-    case 5:
-      d = light;
-      break;
-  }
-
-  displayDigit(d, Position);
+  displayDigit(digits[Position-1], Position);
+  
   if (Frequency < 100) {
     Position = Position == 5 ? 3 : Position + 1;
   } else if (Frequency < 1000) {
@@ -265,7 +263,7 @@ __interrupt void ISR_TickTimer(void)
   {
     B2_time++;
   } else {B2_time = 0;} 
-  
+  /*
   if (!BUT3)  
   {
     B3_time++;
@@ -276,16 +274,18 @@ __interrupt void ISR_TickTimer(void)
     }
     B3_time = 0;
   }
-    
-  if (!BUT4)  
+  */
+ 
+  
+  
+  if(!BUT3)
+  {
+    B3_time++;
+  }
+
+  if(!BUT4)
   {
     B4_time++;
-  } else {
-    if (BUT4 && B4_time >= 30 && B4_time < 1000){
-      Frequency = EEPROM_read_int(0);
-      setFrequency(Frequency);
-    }
-    B4_time = 0;
   }
    
   
@@ -298,16 +298,14 @@ __interrupt void ISR_TickTimer(void)
 
 int main()
 {
-  unsigned short B1_prevtime;
-  
-  
+ 
   Frequency = EEPROM_read_int(0);
 
   if (Frequency > 2000)
   {
     Frequency = 10;
   } 
-  
+  updateDigits();
   setFrequency(Frequency);
   
   portSetup();
@@ -315,8 +313,22 @@ int main()
   Timer1_setup();
   usart_setup(MYUBRR);
   TR = 0;
+  
   while(1)
   {
+    if (packet_ready)
+    {
+      receivePacket();
+      frequencyChanged = true;
+    }
+    
+    if (frequencyChanged) 
+    {
+        
+      updateDigits(); 
+      frequencyChanged = false;
+    }    
+    
     if (!BUT1) {
       if (B1_time >= 10000) {
         if (Tcount % 100 == 0){
@@ -351,7 +363,20 @@ int main()
       B2_time = 0;
     }
     
-   
+    if (BUT3 && B3_time >= 30){
+      EEPROM_write_int(0, Frequency);
+      blinkFlag = true;
+      B3_time = 0;
+    }
+    
+    if (BUT4 && B4_time >= 30){
+      Frequency = EEPROM_read_int(0);
+      B4_time = 0;
+      DELAY_MS(3);
+      setFrequency(Frequency);
+      frequencyChanged = true;
+    }
+    
     
     
   } 
