@@ -28,6 +28,7 @@ void usart_setup(UCHAR ubrr)
   
   UCSR0B_RXCIE0 = 1; //recieve interrupt 
   //UCSR0B_UDRIE0 = 1; //transmit interrupt
+  UCSR0B_TXCIE0 = 1;
   UCSR0B_RXEN0 = 1;  //recieve permission
   UCSR0B_TXEN0 = 1; //transmit permission
   
@@ -62,7 +63,7 @@ void receivePacket() {
           //Spacket;
           TR = 1;
           DELAY_US(60);
-          UCSR0B_UDRIE0 = 1;
+          //UCSR0B_UDRIE0 = 1;
           UDR0 = Spacket[packet_index_tx++];
         } else if (command == 0x77) { //w (write) = 0x77
             writeData(data); 
@@ -87,6 +88,7 @@ __interrupt void ISR_USART0_RX(void) {
   
 }
 
+/*
 #pragma vector=USART0_UDRE_vect
 __interrupt void ISR_USART0_UDRE(void)
 {
@@ -101,8 +103,6 @@ __interrupt void ISR_USART0_UDRE(void)
     UCSR0B_TXCIE0 = 1; 
     //UDR0 = Spacket[packet_index_tx++];
     //packet_index_tx = 0;
-    
-    
   }
   
 }
@@ -112,4 +112,18 @@ __interrupt void ISR_USART0_TX(void)
 {
   TR = 0;
   UCSR0B_TXCIE0 = 0; //recieve interrup
+}*/
+
+
+#pragma vector=USART0_TXC_vect
+__interrupt void ISR_USART0_TX(void)
+{
+  if (packet_index_tx < 5)
+  {
+    UDR0 = Spacket[packet_index_tx++];
+  } else {
+    packet_index_tx = 0;
+    TR = 0;
+  }
+
 }

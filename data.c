@@ -9,8 +9,9 @@ extern bool blinkFlag = false;
 
 
 void setFrequency(unsigned short freq)
-{  
-  unsigned int ocr_value = (unsigned long)((F_CPUd1024 / freq)*10 - 1);
+{
+  unsigned long temp = F_CPUd1024;  
+  unsigned int ocr_value = (unsigned long)(((temp * 10)+ freq/2 ) / freq  - 1);
   
   if(TCNT1 > ocr_value)
   {TCNT1 = ocr_value - 10;}
